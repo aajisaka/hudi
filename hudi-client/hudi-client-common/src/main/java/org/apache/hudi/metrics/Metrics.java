@@ -86,6 +86,7 @@ public class Metrics {
 
   public static synchronized void shutdownAllMetrics() {
     METRICS_INSTANCE_PER_BASEPATH.values().forEach(Metrics::shutdown);
+    METRICS_INSTANCE_PER_BASEPATH.clear();
   }
 
   private List<MetricsReporter> addAdditionalMetricsExporters(HoodieWriteConfig metricConfig) {
